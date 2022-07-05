@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step01_dataType6.html</title>
+</head>
+<body>
+    <h1>javascript data type</h1>
+    <button onclick="f1()">누르세요</button> <!--global area-->
+    <script> //페이지 로딩 시 바로 실행됨
+        /*
+            특정 시점에 일괄 실행할 javascript를 미리 준비해 놓기 위해서는
+            function type data 가 필요하다.
+        */
+
+        // number type data 를 만들어서 num1 이라는 이름의 변수에 대입하기
+        let num1 = 10;
+        // string type data 를 만들어서 name1 이라는 이름의 변수에 대입하기
+        let name1="kim";
+        // object type data 를 만들어서 mem1 이라는 이름의 변수에 대입하기
+        let mem1={};
+
+        //function type data를 만들어서 f1 이라는 이름의 변수에 대입하기
+        let f1=function() {  
+            console.log("하나");
+            console.log("두울"); // 페이지 로딩시 x
+            console.log("세엣"); // f1함수가 call 되었을 때 작동된다.
+        };
+        
+        //함수는 참조도 되고 호출도된다.(둘이 구분하기)
+
+        //f1 안에 들어있는 값을 참조
+        let f2=f1; //참조         괄호 무 참조
+        let result=f1(); //호출    괄호 유 호출(call)
+
+        //number, string, boolean type 이 들어 있는 변수 안에는 실제로 그 값이 들어 있다고
+        //생각해도 무방하다.
+
+        // - object, array, function 은 heap 영역에 만들어진다.(사물함 영역에 만들어 진다.)
+        // - 사물함은 사물함 번호로 관리가 된다.
+        // - 사물함 번호를 프로그래밍 적인 관점에서는 "참조값" 이라고 부른다.
+        // - "참조값"은 사물함 key 라고 상상을 하면 된다.
+        // - key만 관리하면된다. 
+        // 실제 사물처럼 필요한 물건을 들고 다니는게 아니라 보관해두고 key로 꺼내쓰는 느낌이다.
+
+    </script>
+</body>
+</html>
