@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test.html</title>
+</head>
+<body>
+    <input type="text" id="num1">
+    <button onclick="plus()">+</button>
+    <button onclick="minus()">-</button>
+    <input type="text" id="num2">
+    =
+    <span id="result"></span>
+    <script>
+        // num1과 num2를 함수 밖에 빼놓고 선언 해놓으면 페이지 로딩 시 시작 되면서
+        // 필요할 때 그 때 그 떄 호출 해야 되는데 밖에 빼 놓으면 빈 값만 들어가고 끝난다.
+        let num1 = document.querySelector("#num1");
+        let num2 = document.querySelector("#num2");
+
+        function plus() {
+            let result=Number(num1)+Number(num2); 
+            document.querySelector("#result").innerText=result;
+        }
+
+        function minus() {
+            let num1 = document.querySelector("#num1").value;
+            let num2 = document.querySelector("#num2").value;
+            let result=Number(num1)-Number(num2); 
+            document.querySelector("#result").innerText=result;
+        }
+    </script>
+</body> 
+</html> 
