@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example3.html</title>
+</head>
+<body>
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+    <div>div6</div>
+    <div>div7</div>
+    <div>div8</div>
+    <div>div9</div>
+    <div>div10</div>
+    <div>div11</div>
+    <div>div12</div>
+    <div>div13</div>
+    <div>div14</div>
+    <div>div15</div>
+    <div>div16</div>
+    <div>div17</div>
+    <div>div18</div>
+    <div>div19</div>
+    <div>div20</div>
+    <button id="changeBtn">바꾸기</button>
+    <script>
+       document.querySelector("#changeBtn").addEventListener("click", function(){
+        let test = document.querySelectorAll("div");
+        for(let test=1; test<21; test++){
+            document.write(test+"<br>");
+        }
+    });
+
+    for(let i=0; i<10000; i++){
+        console.log("와웅"+i);
+        console.log(i);
+    }
+    </script>
+</body>
+</html>

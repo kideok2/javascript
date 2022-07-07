@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_example2.html</title>
+    <style>
+        #kimImg{
+            /* transition: margin-left 1s ease-out; css 모션*/
+            transition: all 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <button id="moveRightBtn">오른쪽 무빙</button>
+    <button id="moveLeftBtn">왼쪽 무빙</button>
+    <button id="moveRightLeftBtn">우측하단 무빙</button>
+    <button id="resetBtn">초기화</button>
+    <br>
+    <img src="./images/r2.png" id="kimImg">
+    <script>
+        /*
+            아래의 mLeft 변수를 활용해서
+            움직이기 버튼을 누를 때 마다 이미지를 왼쪽 마진을 100px씩 증가 
+            시켜서 이미지가 우측으로 100px 씩 움직이도록 프로그래밍 해 보세요.
+
+            hint) .style.marginLeft = mLeft+"px";
+        */
+       // local 영역에서 공통으로 사용할 지역변수를 만들고 초기값 0 대입
+       let mLeft=0; 
+       let mTop=0;
+       //마진 기본 값을 정의해 줘야함 
+
+       document.querySelector("#moveRightLeftBtn").addEventListener("click",function(){
+            // 변수에 있는 숫자를 100씩 증가 시키고
+            mLeft = mLeft+100;
+            mTop = mTop+100;
+            // 변수에 있는 숫자를 이미지의 왼쪽 마진에 적용한다.
+            document.querySelector("#kimImg").style.marginLeft = mLeft+"px";
+            document.querySelector("#kimImg").style.marginTop = mTop+"px";
+       });
+
+       document.querySelector("#moveRightBtn").addEventListener("click",function(){
+            // 변수에 있는 숫자를 100씩 증가 시키고
+            mLeft = mLeft+100;
+            // 변수에 있는 숫자를 이미지의 왼쪽 마진에 적용한다.
+            document.querySelector("#kimImg").style.marginLeft = mLeft+"px";
+       });
+
+       document.querySelector("#moveLeftBtn").addEventListener("click",function(){
+            if(mLeft != 0){ //괄호 안이 참이면 괄호 안을 실행해라. 
+            // 변수에 있는 숫자를 100씩 증가 시키고
+            mLeft = mLeft-100;
+            // 변수에 있는 숫자를 이미지의 왼쪽 마진에 적용한다.
+            document.querySelector("#kimImg").style.marginLeft = mLeft+"px";
+            }
+       });
+
+       document.querySelector("#resetBtn").addEventListener("click", function(){
+        mLeft=0; 
+        mTop=0;    
+        // 기본 값을 0으로 정의 안 해주면 다시 증가 버튼을 누를 때
+        // 증가 하고 멈춘 값부터 다시 증가하기 시작함.
+            document.querySelector("#kimImg").style.marginLeft=mLeft+"px";
+            document.querySelector("#kimImg").style.marginTop=mTop+"px";
+       })
+        
+    </script>
+</body>
+</html>
