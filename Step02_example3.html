@@ -27,19 +27,34 @@
     <div>div18</div>
     <div>div19</div>
     <div>div20</div>
+    <div>div21</div>
+    <div>div22</div>
+    <div>div23</div>
+    <div>div24</div>
+    <div>div25</div>
+    
     <button id="changeBtn">바꾸기</button>
+    <button id="changeBtn2">바꾸기2</button>
     <script>
-       document.querySelector("#changeBtn").addEventListener("click", function(){
-        let test = document.querySelectorAll("div");
-        for(let test=1; test<21; test++){
-            document.write(test+"<br>");
-        }
-    });
+        document.querySelector("#changeBtn").addEventListener("click", function(){
+            let test = document.querySelectorAll("div"); //아예 빈칸으로 두거나, [“*”]는 전체를 표시
+            for(let test=1; test<21; test++){
+                document.write(test+"<br>");
+            }
+        });
 
-    for(let i=0; i<10000; i++){
-        console.log("와웅"+i);
-        console.log(i);
-    }
+        document.querySelector("#changeBtn2").addEventListener("click", function(){
+            //요소명 div인 모든 무서객체의 참조값을 배열로 얻어낸다.
+            let divs = document.querySelectorAll("div"); //아예 빈칸으로 두거나, [“*”]는 전체를 표시
+            for(let i=0; i<divs.length; i++){ // 21위치의 숫자는 결국 배열이기 떄문에 document.querySelectorAll("div").length; 이다
+            divs[i].innerText = "김구라";
+            }
+        });
+
+        for(let i=0; i<10000; i++){
+            console.log("와웅"+i);
+            console.log(i);
+        }
     </script>
 </body>
 </html>
